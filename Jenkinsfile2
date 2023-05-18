@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Revisión del código') {
             steps {
-                echo "Teste ejecutado correctamente"
+                echo "Test ejecutado correctamente"
             }
         }
         stage("Publish to Nexus Repository Manager") {
@@ -25,11 +25,11 @@ pipeline {
                         nexusArtifactUploader(
                             nexusVersion: 'nexus3',
                             protocol: 'http',
-                            nexusUrl: '192.168.1.86:8081',
+                            nexusUrl: '192.168.100.13:8081',
                             groupId: pom.groupId,
                             version: pom.version,
-                            repository: 'leccion6',
-                            credentialsId: 'MavenNexus',
+                            repository: 'taream3l6',
+                            credentialsId: 'nexus',
                             artifacts: [
                                 [artifactId: pom.artifactId,
                                     classifier: '',
