@@ -28,7 +28,7 @@ pipeline {
                             nexusUrl: '192.168.1.86:8081',
                             groupId: pom.groupId,
                             version: pom.version,
-                            repository: 'Modulo3-hosted',
+                            repository: 'leccion6',
                             credentialsId: 'MavenNexus',
                             artifacts: [
                                 [artifactId: pom.artifactId,
