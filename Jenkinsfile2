@@ -7,6 +7,19 @@ pipeline {
                 sh "mvn clean package"
             }
         }
+        stage('Install') {
+steps {
+sh 'mvn install'
+script {
+if (currentBuild.result == 'SUCCESS') {
+env.BUILD_STAGE2_STATUS = 'SUCCESS'
+} else {
+env.BUILD_STAGE2_STATUS = 'FAILURE'
+}
+}
+}
+}
+}
         stage('Revisión del código') {
             steps {
                 echo "Test ejecutado correctamente"
